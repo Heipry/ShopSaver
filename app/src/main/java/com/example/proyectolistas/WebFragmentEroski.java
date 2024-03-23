@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,5 +57,27 @@ public class WebFragmentEroski extends Fragment {
         } else {
             Log.e("WebFragmentBonarea", "El WebView es nulo");
         }
+        web.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                PopupMenu webViewContextMenu = new PopupMenu(getContext(), view);
+                webViewContextMenu.getMenuInflater().inflate(R.menu.add_to_list, webViewContextMenu.getMenu());
+
+                webViewContextMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        if (menuItem.getItemId() == R.id.add_to_list) {
+                            Toast.makeText(view.getContext(), busqueda + " añadido a Eroski", Toast.LENGTH_SHORT).show();
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+
+                webViewContextMenu.show();
+                return true;
+
+            }
+        });
     }
 }

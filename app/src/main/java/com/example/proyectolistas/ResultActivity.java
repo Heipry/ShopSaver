@@ -48,4 +48,9 @@ public class ResultActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    public void returnBack(View view) {
+         //onBackPressed();
+        finish();
+    }
 }

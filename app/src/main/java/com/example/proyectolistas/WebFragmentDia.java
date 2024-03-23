@@ -73,7 +73,7 @@ public class WebFragmentDia extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
-                            Toast.makeText(view.getContext(), busqueda, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(view.getContext(), busqueda + " añadido a Dia", Toast.LENGTH_SHORT).show();
                             return true;
                         }
                         return false;

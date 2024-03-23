@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 
 public class WebFragmentBonarea extends Fragment {
@@ -73,7 +74,7 @@ public class WebFragmentBonarea extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
-                            // Aquí colocarías el código para añadir a la lista
+                            Toast.makeText(view.getContext(), busqueda+" añadido a Bonarea", Toast.LENGTH_SHORT).show();
                             return true;
                         }
                         return false;
