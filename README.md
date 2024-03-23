@@ -1,4 +1,4 @@
-ShopSaver Find, Compare and Save
+# ShopSaver Find, Compare and Save
 
 ShopSaver is a mobile application for Android devices designed to simplify and improve the shopping experience for groceries and supermarket products. 
 Our main objective is to provide users with a versatile and efficient tool to manage their shopping lists and obtain the best products at the most convenient price.
@@ -9,7 +9,8 @@ In an increasingly busy world, grocery shopping can be a time-consuming and ofte
 In short, ShopSaver is designed to make shopping more convenient and economical by allowing users to make informed decisions while maintaining control over their shopping lists. Our application's main purpose is to simplify the lives of buyers, offering a comprehensive solution for managing supermarket purchases.
 
 -----------------------------------------
-ShopSaver Encuentra, Compara y Guarda.
+# ShopSaver Encuentra, Compara y Guarda.
+
 ShopSaver es una aplicación móvil para dispositivos Android diseñada para simplificar y mejorar la experiencia de compra de comestibles y productos de supermercado. 
 Nuestro objetivo principal es brindar a los usuarios una herramienta versátil y eficiente para gestionar sus listas de compras y obtener los mejores productos al precio más conveniente.
 En un mundo cada vez más ocupado, realizar la compra de comestibles puede ser una tarea que consume mucho tiempo y, a menudo, costosa. ShopSaver aborda este desafío al ofrecer las siguientes características clave:
