@@ -1,5 +1,6 @@
 package com.example.proyectolistas;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -68,6 +69,15 @@ public class WebFragmentEroski extends Fragment {
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
                             Toast.makeText(view.getContext(), busqueda + " añadido a Eroski", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), ListaActivity.class);
+                            // Crear un Bundle para enviar datos
+                            Bundle bundle = new Bundle();
+                            bundle.putString("nuevoElemento", busqueda);
+                            bundle.putString("tienda", "Eroski");
+                            // Agregar el Bundle al Intent
+                            intent.putExtras(bundle);
+                            // Iniciar ListaActivity
+                            startActivity(intent);
                             return true;
                         }
                         return false;

@@ -1,5 +1,6 @@
 package com.example.proyectolistas;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -61,7 +62,7 @@ public class WebFragmentDia extends Fragment {
             web.getSettings().setJavaScriptEnabled(true);
             web.loadUrl(url);
         } else {
-            Log.e("WebFragmentBonarea", "El WebView es nulo");
+            Log.e("WebFragmentDia", "El WebView es nulo");
         }
         web.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -74,6 +75,15 @@ public class WebFragmentDia extends Fragment {
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
                             Toast.makeText(view.getContext(), busqueda + " añadido a Dia", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getActivity(), ListaActivity.class);
+                            // Crear un Bundle para enviar datos
+                            Bundle bundle = new Bundle();
+                            bundle.putString("nuevoElemento", busqueda);
+                            bundle.putString("tienda", "Dia");
+                            // Agregar el Bundle al Intent
+                            intent.putExtras(bundle);
+                            // Iniciar ListaActivity
+                            startActivity(intent);
                             return true;
                         }
                         return false;
