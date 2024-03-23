@@ -24,6 +24,7 @@ public class ListasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas);
+
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         TiendasAdapter adapter = new TiendasAdapter(tiendas, this);
@@ -31,6 +32,20 @@ public class ListasActivity extends AppCompatActivity {
     }
     public void returnBack(View view) {
         //onBackPressed();
+        finish();
+    }
+    public void returnSearch(View view) {
+        // Crear un intent para volver a la Activity Inicial
+        Intent intent = new Intent(ListasActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void returnHome(View view) {
+        // Crear un intent para volver a la Activity del buscador
+        Intent intent = new Intent(ListasActivity.this, PopupBuscar.class);
+        // Configurar la bandera para mantener el estado de la Activity A
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
         finish();
     }
 }

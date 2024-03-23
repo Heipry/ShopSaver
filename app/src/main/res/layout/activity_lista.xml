@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/round_button_small"
         android:elevation="2dp"
         android:onClick="returnBack"
@@ -21,12 +20,12 @@
         android:scaleX=".5"
         android:scaleY=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        app:layout_constraintTop_toBottomOf="@+id/imagen_flecha"
-         />
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
-        android:id="@+id/btnBuscar"
+        android:id="@+id/btnInicio"
         style="@style/Widget.Material3.Button.TonalButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,14 +33,30 @@
         android:drawableLeft="@drawable/icon_list"
         android:drawablePadding="4dp"
         android:minHeight="6dp"
-        android:onClick="returnBuscador"
+        android:onClick="returnHome"
         android:padding="4dp"
-        android:text="Añadir"
+        android:text="Buscar"
         android:textColor="@color/material_dynamic_neutral60"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/listNameTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_search"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button_small"
+        android:elevation="2dp"
+        android:onClick="returnSearch"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/listNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
 
     <TextView
         android:id="@+id/listNameTextView"
@@ -53,15 +68,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_atras" />
 
+    <TextView
+        android:id="@+id/totalItemsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 elementos totales"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/activeItemsTextView"
+        app:layout_constraintTop_toBottomOf="@+id/listNameTextView" />
+
+    <TextView
+        android:id="@+id/activeItemsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quedan 0 de "
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/totalItemsTextView" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/btnVaciar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/activeItemsTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button

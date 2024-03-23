@@ -5,23 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListasActivity">
+
     <ImageButton
         android:id="@+id/btn_atras"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/round_button_small"
         android:elevation="2dp"
+        android:onClick="returnBack"
         android:padding="12dp"
         android:scaleType="centerInside"
         android:scaleX=".5"
         android:scaleY=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen_flecha"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        android:onClick="returnBack"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <Button
+        android:id="@+id/btnInicio"
+        style="@style/Widget.Material3.Button.TonalButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:drawableLeft="@drawable/icon_list"
+        android:drawablePadding="4dp"
+        android:minHeight="6dp"
+        android:onClick="returnHome"
+        android:padding="4dp"
+        android:text="Buscar"
+        android:textColor="@color/material_dynamic_neutral60"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_search"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button_small"
+        android:elevation="2dp"
+        android:onClick="returnSearch"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
