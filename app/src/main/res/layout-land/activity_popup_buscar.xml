@@ -22,7 +22,7 @@
         android:inputType="text"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:scaleX=".9"
+        android:scaleX="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_popup" />
@@ -34,7 +34,7 @@
         android:layout_alignTop="@+id/edit"
         android:layout_alignEnd="@+id/edit"
         android:layout_alignBottom="@+id/edit"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="20dp"
         android:inputType="text"
         android:text="Ir"
         android:textColor="@color/texto"

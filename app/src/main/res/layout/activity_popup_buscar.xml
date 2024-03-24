@@ -22,7 +22,6 @@
         android:inputType="text"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:scaleX=".9"
         android:imeOptions="actionSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
