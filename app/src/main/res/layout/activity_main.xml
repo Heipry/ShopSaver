@@ -85,12 +85,12 @@
 
     <Button
         android:id="@+id/btn_listas"
-        style="@style/Widget.Material3.Button.ElevatedButton"
+        style="@style/Widget.Material3.Button.TonalButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/fondo"
         android:drawableLeft="@drawable/icon_list"
+
         android:text="Listas"
         android:textColor="@color/texto"
         app:layout_constraintBottom_toBottomOf="parent"

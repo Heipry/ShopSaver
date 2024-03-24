@@ -4,4 +4,12 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <!-- Nuevo estilo para el tema oscuro -->
+    <style name="Base.Theme.ProyectoListas.Dark" parent="Base.Theme.ProyectoListas">
+        <item name="colorPrimary">@color/black</item> <!-- Color primario oscuro -->
+        <item name="colorPrimaryDark">@color/fondo</item> <!-- Color primario oscuro oscuro -->
+        <item name="colorAccent">@color/rosa</item> <!-- Color de acento oscuro -->
+        <item name="android:textColorPrimary">@color/texto</item> <!-- Color de texto primario oscuro -->
+    </style>
 </resources>

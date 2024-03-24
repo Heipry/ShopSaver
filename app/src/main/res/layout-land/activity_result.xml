@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/round_button"
+    android:backgroundTint="@color/fondo"
     tools:context=".ResultActivity">
 
     <ImageButton
@@ -13,17 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/round_button_small"
         android:elevation="2dp"
+        android:onClick="returnBack"
         android:padding="12dp"
         android:scaleType="centerInside"
         android:scaleX=".5"
         android:scaleY=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen_flecha"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        android:onClick="returnBack"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/titulo_resultados"
@@ -42,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:backgroundTint="@color/fondo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_resultados">
 
@@ -53,6 +53,8 @@
             android:layout_weight="1"
             android:onClick="seleccionarFragmento"
             android:text="Dia"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/texto"
             app:cornerRadius="8dp" />
 
         <Button
@@ -63,6 +65,8 @@
             android:layout_weight="1"
             android:onClick="seleccionarFragmento"
             android:text="Bonarea"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/texto"
             app:cornerRadius="8dp" />
 
         <Button
@@ -72,6 +76,8 @@
             android:layout_weight="1"
             android:onClick="seleccionarFragmento"
             android:text="Eroski"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/texto"
             app:cornerRadius="8dp" />
     </LinearLayout>
 

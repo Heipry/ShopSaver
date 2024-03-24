@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/fondo"
     android:background="@drawable/round_button"
     tools:context=".ResultActivity">
 
@@ -13,17 +14,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
         android:background="@drawable/round_button_small"
         android:elevation="2dp"
+        android:onClick="returnBack"
         android:padding="12dp"
         android:scaleType="centerInside"
         android:scaleX=".5"
         android:scaleY=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen_flecha"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        android:onClick="returnBack"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/titulo_resultados"
@@ -32,6 +32,7 @@
         android:text="Resultados"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
+        android:textColor="@color/texto"
         app:layout_constraintBottom_toBottomOf="@+id/btn_atras"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +43,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:backgroundTint="@color/fondo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_resultados">
@@ -52,6 +54,8 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/textoBoton"
             android:text="Dia"
             android:onClick="seleccionarFragmento"
             app:cornerRadius="8dp" />
@@ -62,6 +66,8 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/textoBoton"
             android:onClick="seleccionarFragmento"
             android:text="Bonarea"
             app:cornerRadius="8dp" />
@@ -71,6 +77,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/textoBoton"
             android:onClick="seleccionarFragmento"
             android:text="Eroski"
             app:cornerRadius="8dp" />
