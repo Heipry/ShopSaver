@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/rosa"
+            android:backgroundTint="@color/rosa2"
             android:textColor="@color/textoBoton"
             android:text="Dia"
             android:onClick="seleccionarFragmento"

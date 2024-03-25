@@ -1,14 +1,17 @@
 package com.example.ShopSaver;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 
 public class ResultActivity extends AppCompatActivity {
     String textoInicial;
+    Button btnDia, btnBonarea, btnEroski;
       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +32,18 @@ public class ResultActivity extends AppCompatActivity {
         Fragment miFragmento;
         String textoBuscado = textoInicial;
         Bundle busqueda = new Bundle();
+        // Ponemos todos los botones con color desmarcado
+        btnDia = findViewById(R.id.buttonDia);
+        btnBonarea = findViewById(R.id.buttonBonarea);
+        btnEroski = findViewById(R.id.buttonEroski);
+        btnBonarea.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
+        btnEroski.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
+        btnDia.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
+        // Ponemosel clickado con color marcado
+        v.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa2));
         busqueda.putString("termino",textoBuscado);
-        if (v == findViewById(R.id.buttonDia)) {
+        if (v == btnDia) {
             miFragmento = new WebFragmentDia();
-
         } else if (v == findViewById(R.id.buttonBonarea)) {
             miFragmento = new WebFragmentBonarea();
 

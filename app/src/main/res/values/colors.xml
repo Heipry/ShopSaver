@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fondo">#F5F5F5</color>
     <color name="rosa">#9747FF</color>
+    <color name="rosa2">#552799</color>
     <color name="texto">#344054</color>
     <color name="textoBoton">#DDDDDD</color>
 </resources>
