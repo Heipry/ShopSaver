@@ -31,16 +31,19 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_lista);
         Bundle bundle = getIntent().getExtras();
         tiendaNombre = bundle.getString("tienda");
         totalItemsTextView = findViewById(R.id.totalItemsTextView);
         activeItemsTextView = findViewById(R.id.activeItemsTextView);
         items.clear();
-        if (bundle != null && bundle.containsKey("nuevoElemento")) {
+
+        if ( savedInstanceState == null && bundle != null && bundle.containsKey("nuevoElemento")) {
             String nuevoElemento = bundle.getString("nuevoElemento");
             items.add(new ListItem(nuevoElemento, true));
         }
+
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         String tableName = tiendaNombre.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
@@ -63,12 +66,10 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
 
         String tableName = tiendaNombre.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
         Cursor cursor = db.rawQuery("SELECT item, is_activo FROM " + tableName, null);
-
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 @SuppressLint("Range") String itemText = cursor.getString(cursor.getColumnIndex("item"));
                 @SuppressLint("Range") boolean isActivo = cursor.getInt(cursor.getColumnIndex("is_activo")) == 1;
-                Log.d("TAG", String.valueOf(isActivo));
                 items.add(new ListItem(itemText, isActivo));
             }
             cursor.close();
@@ -102,6 +103,7 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
             saveItemsToDatabase(tiendaNombre, items);
         }
     }
+
     public void accionVaciar(View v){
         items.clear();
         DatabaseHelper dbHelper = new DatabaseHelper(this);
@@ -121,11 +123,13 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
                 activeItems++;
             }
         }
+
         totalItemsTextView.setText(totalItems + " elementos totales");
         activeItemsTextView.setText("Quedan " + activeItems + " de ");
     }
     public void onItemStateChanged() {
         // Actualizar los contadores de elementos activos
+
         updateItemCounts();
     }
 
