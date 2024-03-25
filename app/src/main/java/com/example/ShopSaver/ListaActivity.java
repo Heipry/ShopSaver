@@ -150,6 +150,7 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
     public void returnSearch(View view) {
         // Crear un intent para volver a la Activity Inicial
         Intent intent = new Intent(ListaActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
         finish();
     }

@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PopupBuscar extends AppCompatActivity {
     TextView btn_ir;
@@ -26,22 +28,25 @@ public class PopupBuscar extends AppCompatActivity {
         getWindow().setLayout((int)(ancho*0.85),(int)(alto*0.5));
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         buscado = findViewById(R.id.edit);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        buscado.requestFocus();
         btn_ir = findViewById(R.id.txt_ir);
         btn_ir.setOnClickListener(new intentBuscar());
+
         buscado.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEND) {
-                    // Aquí ejecutas la acción deseada
                     new intentBuscar().onClick(buscado);
                     return true;
                 }
                 return false;
             }
         });
-
-
     }
+
+
+
     private class intentBuscar implements View.OnClickListener{
 
         @Override
@@ -49,6 +54,7 @@ public class PopupBuscar extends AppCompatActivity {
             Intent busqueda =new Intent(PopupBuscar.this, ResultActivity.class);
             String vBuscado = buscado.getText().toString();
             busqueda.putExtra("termino", vBuscado);
+            buscado.setText("");
             startActivity(busqueda);
         }
     }
