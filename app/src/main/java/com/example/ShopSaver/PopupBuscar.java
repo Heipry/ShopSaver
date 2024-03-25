@@ -51,7 +51,7 @@ public class PopupBuscar extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            Intent busqueda =new Intent(PopupBuscar.this, ResultActivity.class);
+            Intent busqueda =new Intent(PopupBuscar.this, ResultSwipeActivity.class);
             String vBuscado = buscado.getText().toString();
             busqueda.putExtra("termino", vBuscado);
             buscado.setText("");
