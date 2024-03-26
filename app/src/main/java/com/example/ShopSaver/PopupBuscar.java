@@ -3,6 +3,7 @@ package com.example.ShopSaver;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -51,7 +52,14 @@ public class PopupBuscar extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            Intent busqueda =new Intent(PopupBuscar.this, ResultSwipeActivity.class);
+
+            int orientation = getResources().getConfiguration().orientation;
+            Intent busqueda;
+            if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                 busqueda = new Intent(PopupBuscar.this, ResultActivity.class);
+            } else {
+                 busqueda = new Intent(PopupBuscar.this, ResultSwipeActivity.class);
+            }
             String vBuscado = buscado.getText().toString();
             busqueda.putExtra("termino", vBuscado);
             buscado.setText("");

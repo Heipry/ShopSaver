@@ -8,7 +8,10 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -46,6 +49,9 @@ public class ResultSwipeActivity extends AppCompatActivity {
                         }
                     }
                 }).attach();
+           viewPager.setOffscreenPageLimit(1);
+
+
     }
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
         private final Bundle bundle;
@@ -78,6 +84,19 @@ public class ResultSwipeActivity extends AppCompatActivity {
         @Override
         public int getItemCount() {
             return 3;
+        }
+    }
+    public void returnBack(View view) {
+        finish();
+    }
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // Cambiar a la actividad horizontal
+            Intent intent = new Intent(this, ResultActivity.class);
+            intent.putExtra("termino", textoInicial);
+            startActivity(intent);
+            finish(); // Cierra la actividad actual
         }
     }
 }

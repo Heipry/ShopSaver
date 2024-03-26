@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class ResultActivity extends AppCompatActivity {
@@ -62,5 +66,16 @@ public class ResultActivity extends AppCompatActivity {
     public void returnBack(View view) {
          //onBackPressed();
         finish();
+    }
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Toast.makeText(this, "cambio", Toast.LENGTH_SHORT).show();
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            // Cambiar a la actividad vertical
+            Intent intent = new Intent(this, ResultSwipeActivity.class);
+            intent.putExtra("termino", textoInicial);
+            startActivity(intent);
+            finish(); // Cierra la actividad actual
+        }
     }
 }
