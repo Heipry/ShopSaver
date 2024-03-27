@@ -55,7 +55,7 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
         adapter = new ListaAdapter(this,items, tiendaNombre);
         recyclerView.setAdapter(adapter);
         listNameTextView = findViewById(R.id.listNameTextView);
-        listNameTextView.setText("Lista Compra "+tiendaNombre);
+        listNameTextView.setText(getString(R.string.lista_compra_con_nombre_tienda, tiendaNombre));
         loadItemsFromDatabase(tiendaNombre);
         adapter.setItemStateChangedListener(this);
 

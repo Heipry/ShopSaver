@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/fondo"
+    tools:context=".ResultActivity">
+
+    <ImageButton
+        android:id="@+id/btn_atras"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/round_button_small"
+        android:elevation="2dp"
+        android:onClick="returnBack"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/arrowDescription"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <TextView
+        android:id="@+id/titulo_resultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TituloResultados"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_atras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_atras" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:backgroundTint="@color/fondo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_resultados">
+
+        <Button
+            android:id="@+id/buttonDia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:onClick="seleccionarFragmento"
+            android:text="@string/SuperName1"
+            android:backgroundTint="@color/rosa2"
+            android:textColor="@color/textoBoton"
+            app:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/buttonBonarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:onClick="seleccionarFragmento"
+            android:text="@string/SuperName2"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/textoBoton"
+            app:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/buttonEroski"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="seleccionarFragmento"
+            android:text="@string/SuperName3"
+            android:backgroundTint="@color/rosa"
+            android:textColor="@color/textoBoton"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frameContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_resultados">
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

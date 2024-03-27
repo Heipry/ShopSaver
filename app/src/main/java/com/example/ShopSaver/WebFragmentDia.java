@@ -17,15 +17,9 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link WebFragmentDia#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class WebFragmentDia extends Fragment {
 
-
-    private static final String ARG_PARAM1 = "param1";
 
 
     // TODO: Rename and change types of parameters
@@ -35,11 +29,6 @@ public class WebFragmentDia extends Fragment {
         // Required empty public constructor
     }
 
-
-    public static WebFragmentDia newInstance() {
-        WebFragmentDia fragment = new WebFragmentDia();
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +40,6 @@ public class WebFragmentDia extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_web_dia, container, false);
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
