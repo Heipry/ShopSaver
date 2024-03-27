@@ -18,9 +18,9 @@ import java.util.Map;
 
 // TiendasAdapter.java
 public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaViewHolder> {
-    private List<String> tiendas;
-    private Context context;
-    private Map<String, Integer> tiendaImageMap = new HashMap<>();
+    private final List<String> tiendas;
+    private final Context context;
+    private final Map<String, Integer> tiendaImageMap = new HashMap<>();
     public TiendasAdapter(List<String> tiendas, Context context) {
         this.tiendas = tiendas;
         this.context = context;
@@ -40,7 +40,9 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
     public void onBindViewHolder(@NonNull TiendaViewHolder holder, final int position) {
         final String tienda = tiendas.get(position);
         holder.tiendaName.setText(tienda);
-        int imageResourceId = tiendaImageMap.get(tienda);
+        Integer imageResourceInteger = tiendaImageMap.get(tienda);
+        int imageResourceId = (imageResourceInteger != null) ? imageResourceInteger : 0;
+
         holder.tiendaImage.setImageResource(imageResourceId);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

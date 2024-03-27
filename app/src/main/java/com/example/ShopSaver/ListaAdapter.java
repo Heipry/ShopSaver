@@ -21,9 +21,9 @@ import java.util.List;
 // ListaAdapter.java
 public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ItemViewHolder> {
     private List<ListItem> items = new ArrayList<>();
-    private Context context;
+    private final Context context;
 
-    private String tiendaNombre;
+    private final String tiendaNombre;
     private OnItemStateChangedListener itemStateChangedListener;
 
 

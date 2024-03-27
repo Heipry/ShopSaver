@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnItemStateChangedListener {
-    private List<ListItem> items = new ArrayList<>();
+    private final List<ListItem> items = new ArrayList<>();
     private RecyclerView recyclerView;
     private ListaAdapter adapter;
     private TextView listNameTextView;
@@ -39,18 +38,12 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
         activeItemsTextView = findViewById(R.id.activeItemsTextView);
         items.clear();
 
-        if ( savedInstanceState == null && bundle != null && bundle.containsKey("nuevoElemento")) {
+        if ( savedInstanceState == null && bundle.containsKey("nuevoElemento")) {
             String nuevoElemento = bundle.getString("nuevoElemento");
             items.add(new ListItem(nuevoElemento, true));
         }
-
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        String tableName = tiendaNombre.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
-
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Intent intent = getIntent();
         tiendaNombre = bundle.getString("tienda");
         adapter = new ListaAdapter(this,items, tiendaNombre);
         recyclerView.setAdapter(adapter);
@@ -63,7 +56,6 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
     private void loadItemsFromDatabase(String tiendaNombre) {
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-
         String tableName = tiendaNombre.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
         Cursor cursor = db.rawQuery("SELECT item, is_activo FROM " + tableName, null);
         if (cursor != null) {
@@ -106,13 +98,14 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
 
     public void accionVaciar(View v){
         items.clear();
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        String tableName = tiendaNombre.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
-        // Borrar los datos anteriores en la tabla
-        db.delete(tableName, null, null);
-        updateItemCounts();
-        adapter.notifyDataSetChanged();
+        try(DatabaseHelper dbHelper = new DatabaseHelper(this)) {
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            String tableName = tiendaNombre.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
+            // Borrar los datos anteriores en la tabla
+            db.delete(tableName, null, null);
+            updateItemCounts();
+            adapter.notifyDataSetChanged();
+        }
 
     }
     private void updateItemCounts() {
@@ -124,8 +117,8 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
             }
         }
 
-        totalItemsTextView.setText(totalItems + " elementos totales");
-        activeItemsTextView.setText("Quedan " + activeItems + " de ");
+        totalItemsTextView.setText(getString(R.string.stringTotalesParametro,totalItems));
+        activeItemsTextView.setText(getString(R.string.stringValidosParametro,activeItems));
     }
     public void onItemStateChanged() {
         // Actualizar los contadores de elementos activos
