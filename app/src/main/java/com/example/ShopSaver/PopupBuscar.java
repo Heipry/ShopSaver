@@ -46,6 +46,21 @@ public class PopupBuscar extends AppCompatActivity {
         });
     }
 
+    public void openList(View view) {
+        Intent intent = new Intent(this, ListaActivity.class);
+        Bundle bundle = new Bundle();
+        if (view.getId() == R.id.cardDia) {
+            bundle.putString("tienda", "Dia");
+
+        } else if (view.getId() == R.id.cardBonarea) {
+            bundle.putString("tienda", "Bonarea");
+        }else  {
+            bundle.putString("tienda", "Eroski");
+        }
+        intent.putExtras(bundle);
+        finish();
+        startActivity(intent);
+    }
 
 
     private class intentBuscar implements View.OnClickListener{
@@ -66,4 +81,6 @@ public class PopupBuscar extends AppCompatActivity {
             startActivity(busqueda);
         }
     }
+
+
 }

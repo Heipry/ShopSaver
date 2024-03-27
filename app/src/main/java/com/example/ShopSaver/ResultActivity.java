@@ -43,7 +43,7 @@ public class ResultActivity extends AppCompatActivity {
         btnBonarea.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
         btnEroski.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
         btnDia.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
-        // Ponemosel clickado con color marcado
+        // Ponemos el clickado con color marcado
         v.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa2));
         busqueda.putString("termino",textoBuscado);
         if (v == btnDia) {

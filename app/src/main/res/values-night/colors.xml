@@ -7,4 +7,5 @@
     <color name="rosa2">#AB6ACC</color>
     <color name="texto">#FFFFFF</color>
     <color name="textoBoton">#CCCCCC</color>
+    <color name="fondoCard">#222222</color>
 </resources>

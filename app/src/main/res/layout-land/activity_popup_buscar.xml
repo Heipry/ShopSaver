@@ -56,140 +56,152 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/txt_subtitulo"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/cardDia"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Supermercados:"
-        android:textSize="16sp"
+        android:onClick="openList"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/cardBonarea"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_below="@+id/txt_subtitulo"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="250dp"
-        app:layout_constraintStart_toEndOf="@+id/txt_subtitulo"
         app:layout_constraintTop_toBottomOf="@+id/edit">
 
+
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:id="@+id/cardView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/txt_subtitulo"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="250dp">
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dia" />
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dia" />
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/txtDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:text="Dia"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtDia"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/cardBonarea"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Dia"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="@+id/cardView" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_below="@+id/cardView"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="250dp"
-        app:layout_constraintStart_toEndOf="@+id/txtDia"
+        android:onClick="openList"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/cardEroski"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cardDia"
         app:layout_constraintTop_toBottomOf="@+id/edit">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:id="@+id/cardView1"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/cardView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="250dp">
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bonarea" />
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bonarea" />
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/txtBonarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:text="Bonarea"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtBonarea"
+    <LinearLayout
+        android:id="@+id/cardEroski"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Bonarea"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView1"
-        app:layout_constraintStart_toEndOf="@+id/cardView1"
-        app:layout_constraintTop_toTopOf="@+id/cardView1" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_below="@+id/cardView1"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="250dp"
-        app:layout_constraintStart_toEndOf="@+id/txtBonarea"
+        android:onClick="openList"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cardBonarea"
         app:layout_constraintTop_toBottomOf="@+id/edit">
 
+
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:id="@+id/cardView2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/cardView1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="250dp">
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/eroski" />
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eroski" />
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/txtEroski"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Eroski"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-        app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toTopOf="@+id/cardView2" />
+        <TextView
+            android:id="@+id/txtEroski"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:text="Eroski"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
