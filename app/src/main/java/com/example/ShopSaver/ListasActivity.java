@@ -12,14 +12,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ListasActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private List<String> tiendas = Arrays.asList("Dia", "Bonarea", "Eroski");
+    private final List<String> tiendas = Arrays.asList(getString(R.string.SuperName1), getString(R.string.SuperName2),getString(R.string.SuperName3));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         TiendasAdapter adapter = new TiendasAdapter(tiendas, this);
         recyclerView.setAdapter(adapter);

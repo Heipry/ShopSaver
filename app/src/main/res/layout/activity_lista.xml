@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:background="@drawable/round_button_small"
+        android:contentDescription="@string/arrowDescription"
         android:elevation="2dp"
         android:onClick="returnBack"
         android:padding="12dp"
@@ -20,8 +21,8 @@
         android:scaleX=".5"
         android:scaleY=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
@@ -30,12 +31,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
-        android:drawableLeft="@drawable/icon_list"
+        android:drawableStart="@drawable/icon_list"
         android:drawablePadding="4dp"
         android:minHeight="6dp"
         android:onClick="returnHome"
         android:padding="4dp"
-        android:text="Buscar"
+        android:text="@string/btnBuscarText"
         android:textColor="@color/texto"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_search"
@@ -48,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/round_button_small"
+        android:contentDescription="@string/homeDescription"
         android:elevation="2dp"
         android:onClick="returnSearch"
         android:padding="12dp"
@@ -63,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Lista Compra"
+        android:text="@string/TituloLista"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +75,7 @@
         android:id="@+id/totalItemsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 elementos totales"
+        android:text="@string/stringTotales"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/activeItemsTextView"
         app:layout_constraintTop_toBottomOf="@+id/listNameTextView" />
@@ -83,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Quedan 0 de "
+        android:text="@string/stringValidos"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/totalItemsTextView" />
@@ -102,13 +104,13 @@
         android:id="@+id/btnVaciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vaciar Lista"
-        android:textColor="@color/textoBoton"
-        android:backgroundTint="@color/rosa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
-        android:onClick="accionVaciar"/>
+        android:backgroundTint="@color/rosa"
+        android:onClick="accionVaciar"
+        android:text="@string/btnVaciarText"
+        android:textColor="@color/textoBoton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 

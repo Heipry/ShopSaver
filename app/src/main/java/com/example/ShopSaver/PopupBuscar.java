@@ -50,12 +50,12 @@ public class PopupBuscar extends AppCompatActivity {
         Intent intent = new Intent(this, ListaActivity.class);
         Bundle bundle = new Bundle();
         if (view.getId() == R.id.cardDia) {
-            bundle.putString("tienda", "Dia");
+            bundle.putString("tienda", getString(R.string.SuperName1));
 
         } else if (view.getId() == R.id.cardBonarea) {
-            bundle.putString("tienda", "Bonarea");
+            bundle.putString("tienda", getString(R.string.SuperName2));
         }else  {
-            bundle.putString("tienda", "Eroski");
+            bundle.putString("tienda", getString(R.string.SuperName3));
         }
         intent.putExtras(bundle);
         finish();

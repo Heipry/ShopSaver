@@ -18,6 +18,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/dia"
+            android:contentDescription="@string/SuperName1"
             android:scaleType="centerCrop"/>
 
         <LinearLayout
@@ -31,10 +32,10 @@
                 android:id="@+id/tienda_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lista compra "
-                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:text="@string/TituloElementoTienda"
                 android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tienda_name"
@@ -43,7 +44,7 @@
                 android:textSize="14sp"
                 android:textStyle="italic"
                 android:textColor="#888888"
-                android:text="Dia" />
+                android:text="@string/SuperName1" />
 
         </LinearLayout>
 

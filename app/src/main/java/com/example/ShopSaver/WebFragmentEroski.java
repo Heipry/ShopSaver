@@ -68,12 +68,12 @@ public class WebFragmentEroski extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
-                            Toast.makeText(view.getContext(), busqueda + " añadido a Eroski", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(view.getContext(), busqueda + " añadido a "+getString(R.string.SuperName3), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), ListaActivity.class);
                             // Crear un Bundle para enviar datos
                             Bundle bundle = new Bundle();
                             bundle.putString("nuevoElemento", busqueda);
-                            bundle.putString("tienda", "Eroski");
+                            bundle.putString("tienda", getString(R.string.SuperName3));
                             // Agregar el Bundle al Intent
                             intent.putExtras(bundle);
                             // Iniciar ListaActivity

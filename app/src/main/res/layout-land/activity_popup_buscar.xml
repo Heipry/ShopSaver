@@ -17,7 +17,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit"
-        android:hint="Chocolate"
+        android:hint="@string/hintBuscarString"
         android:imeOptions="actionSend"
         android:inputType="text"
         android:paddingStart="20dp"
@@ -25,6 +25,7 @@
         android:scaleX="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="name"
         app:layout_constraintTop_toBottomOf="@+id/titulo_popup" />
 
     <TextView
@@ -35,8 +36,7 @@
         android:layout_alignEnd="@+id/edit"
         android:layout_alignBottom="@+id/edit"
         android:layout_marginEnd="20dp"
-        android:inputType="text"
-        android:text="Ir"
+        android:text="@string/BtnIrString"
         android:textColor="@color/texto"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/edit"
@@ -46,10 +46,8 @@
         android:id="@+id/titulo_popup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:text="Buscar"
+        android:padding="10dp"
+        android:text="@string/buscarTitle"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +69,6 @@
             android:id="@+id/cardView"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_below="@+id/txt_subtitulo"
-            android:layout_alignParentStart="true"
             android:layout_marginStart="52dp"
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
@@ -88,6 +84,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:scaleType="centerCrop"
+                    android:contentDescription="@string/SuperName1"
                     android:src="@drawable/dia" />
 
             </androidx.cardview.widget.CardView>
@@ -100,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"
-            android:text="Dia"
+            android:text="@string/SuperName1"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -120,8 +117,6 @@
             android:id="@+id/cardView1"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_below="@+id/cardView"
-            android:layout_alignParentStart="true"
             android:layout_marginStart="52dp"
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
@@ -137,6 +132,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:scaleType="centerCrop"
+                    android:contentDescription="@string/SuperName2"
                     android:src="@drawable/bonarea" />
 
             </androidx.cardview.widget.CardView>
@@ -149,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"
-            android:text="Bonarea"
+            android:text="@string/SuperName2"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -170,8 +166,6 @@
             android:id="@+id/cardView2"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_below="@+id/cardView1"
-            android:layout_alignParentStart="true"
             android:layout_marginStart="52dp"
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
@@ -187,6 +181,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:scaleType="centerCrop"
+                    android:contentDescription="@string/SuperName3"
                     android:src="@drawable/eroski" />
 
             </androidx.cardview.widget.CardView>
@@ -199,7 +194,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"
-            android:text="Eroski"
+            android:text="@string/SuperName3"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>

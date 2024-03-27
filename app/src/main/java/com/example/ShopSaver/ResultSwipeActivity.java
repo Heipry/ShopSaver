@@ -6,8 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -38,13 +36,13 @@ public class ResultSwipeActivity extends AppCompatActivity {
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                         switch (position) {
                             case 0:
-                                tab.setText("Dia");
+                                tab.setText(getString(R.string.SuperName1));
                                 break;
                             case 1:
-                                tab.setText("Bonarea");
+                                tab.setText(getString(R.string.SuperName2));
                                 break;
                             case 2:
-                                tab.setText("Eroski");
+                                tab.setText(getString(R.string.SuperName3));
                                 break;
                         }
                     }

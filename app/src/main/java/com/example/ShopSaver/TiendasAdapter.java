@@ -24,9 +24,9 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
     public TiendasAdapter(List<String> tiendas, Context context) {
         this.tiendas = tiendas;
         this.context = context;
-        tiendaImageMap.put("Dia", R.drawable.dia);
-        tiendaImageMap.put("Bonarea", R.drawable.bonarea);
-        tiendaImageMap.put("Eroski", R.drawable.eroski);
+        tiendaImageMap.put(context.getString(R.string.SuperName2), R.drawable.dia);
+        tiendaImageMap.put(context.getString(R.string.SuperName2), R.drawable.bonarea);
+        tiendaImageMap.put(context.getString(R.string.SuperName3), R.drawable.eroski);
     }
 
     @NonNull

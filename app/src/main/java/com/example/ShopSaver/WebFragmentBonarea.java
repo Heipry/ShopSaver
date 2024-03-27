@@ -20,7 +20,6 @@ import android.widget.Toast;
 public class WebFragmentBonarea extends Fragment {
 
 
-    private static final String ARG_PARAM1 = "param1";
 
 
     // TODO: Rename and change types of parameters
@@ -31,10 +30,6 @@ public class WebFragmentBonarea extends Fragment {
     }
 
 
-    public static WebFragmentBonarea newInstance() {
-        WebFragmentBonarea fragment = new WebFragmentBonarea();
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,7 +73,7 @@ public class WebFragmentBonarea extends Fragment {
                             // Crear un Bundle para enviar datos
                             Bundle bundle = new Bundle();
                             bundle.putString("nuevoElemento", busqueda);
-                            bundle.putString("tienda", "Bonarea");
+                            bundle.putString("tienda", getString(R.string.SuperName2));
                             // Agregar el Bundle al Intent
                             intent.putExtras(bundle);
                             // Iniciar ListaActivity

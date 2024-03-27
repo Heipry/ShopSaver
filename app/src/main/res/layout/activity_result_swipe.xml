@@ -20,13 +20,14 @@
         android:scaleY=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/arrowDescription"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
         android:id="@+id/titulo_resultados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resultados"
+        android:text="@string/TituloResultados"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:textColor="@color/texto"

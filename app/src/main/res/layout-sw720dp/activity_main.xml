@@ -13,19 +13,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="ShopSaver"
+        android:text="@string/ShopSaver"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/subtitulo"
+        android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:text="Encuentra, compara y guarda"
+        android:text="@string/ShopSaverSubtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Titulo" />
 
@@ -38,7 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitulo"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle"
+        android:contentDescription="@string/homeDescription"
         app:srcCompat="@drawable/ilust720" />
 
     <TextView
@@ -46,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Empieza buscando algo"
+        android:text="@string/hintDescription1"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/texto2"
@@ -60,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Añade un producto a tu compra"
+        android:text="@string/hintDescription2"
         app:layout_constraintBottom_toTopOf="@+id/imagen_flecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -78,6 +79,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/imagen"
         app:layout_constraintTop_toBottomOf="@+id/texto2"
+        android:contentDescription="@string/arrowDrawDescription"
         app:srcCompat="@drawable/hand_drawn_arrow_tablet" />
 
     <ImageButton
@@ -93,6 +95,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_listas"
         app:layout_constraintEnd_toEndOf="@+id/imagen_flecha"
         app:layout_constraintTop_toBottomOf="@+id/imagen_flecha"
+        android:contentDescription="@string/btnMasDescription"
         app:srcCompat="@drawable/icon_plus" />
 
     <Button
@@ -101,9 +104,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:drawableLeft="@drawable/icon_list"
+        android:drawableStart="@drawable/icon_list"
 
-        android:text="Listas"
+        android:text="@string/stringListas"
         android:textColor="@color/texto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

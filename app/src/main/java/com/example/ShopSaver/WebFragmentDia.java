@@ -79,7 +79,7 @@ public class WebFragmentDia extends Fragment {
                             // Crear un Bundle para enviar datos
                             Bundle bundle = new Bundle();
                             bundle.putString("nuevoElemento", busqueda);
-                            bundle.putString("tienda", "Dia");
+                            bundle.putString("tienda", getString(R.string.SuperName1));
                             // Agregar el Bundle al Intent
                             intent.putExtras(bundle);
                             // Iniciar ListaActivity
