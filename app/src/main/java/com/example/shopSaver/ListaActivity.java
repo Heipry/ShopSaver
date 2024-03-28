@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,9 +18,7 @@ import java.util.List;
 
 public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnItemStateChangedListener {
     private final List<ListItem> items = new ArrayList<>();
-    private RecyclerView recyclerView;
     private ListaAdapter adapter;
-    private TextView listNameTextView;
     private TextView totalItemsTextView;
     private TextView activeItemsTextView;
 
@@ -42,12 +40,12 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
             String nuevoElemento = bundle.getString("nuevoElemento");
             items.add(new ListItem(nuevoElemento, true));
         }
-        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         tiendaNombre = bundle.getString("tienda");
-        adapter = new ListaAdapter(this,items, tiendaNombre);
+        adapter = new ListaAdapter(this,items);
         recyclerView.setAdapter(adapter);
-        listNameTextView = findViewById(R.id.listNameTextView);
+        TextView listNameTextView = findViewById(R.id.listNameTextView);
         listNameTextView.setText(getString(R.string.lista_compra_con_nombre_tienda, tiendaNombre));
         loadItemsFromDatabase(tiendaNombre);
         adapter.setItemStateChangedListener(this);
@@ -116,8 +114,8 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
                 activeItems++;
             }
         }
-
-        totalItemsTextView.setText(getString(R.string.stringTotalesParametro,totalItems));
+        String stringTotalesParametro = getResources().getQuantityString(R.plurals.stringTotalesParametro, totalItems, totalItems);
+        totalItemsTextView.setText(stringTotalesParametro);
         activeItemsTextView.setText(getString(R.string.stringValidosParametro,activeItems));
     }
     public void onItemStateChanged() {

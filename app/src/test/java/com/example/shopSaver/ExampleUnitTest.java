@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import org.junit.Test;
 

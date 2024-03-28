@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.ShopSaver'
+    namespace 'com.example.shopSaver'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.ShopSaver"
+        applicationId "com.example.shopSaver"
         minSdk 26
         targetSdk 33
         versionCode 1

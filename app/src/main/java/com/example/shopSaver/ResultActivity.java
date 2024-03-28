@@ -1,5 +1,6 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
 
 
 public class ResultActivity extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class ResultActivity extends AppCompatActivity {
 
           FragmentManager fragmentManager=this.getSupportFragmentManager();
           androidx.fragment.app.FragmentTransaction transaction=fragmentManager.beginTransaction();
-          WebFragmentDia fragmentInicial=new WebFragmentDia();
+          WebFragmentTienda1 fragmentInicial=new WebFragmentTienda1();
           fragmentInicial.setArguments(busqueda);
           transaction.add(R.id.frameContainer, fragmentInicial);
           transaction.commit();
@@ -47,12 +48,12 @@ public class ResultActivity extends AppCompatActivity {
         v.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa2));
         busqueda.putString("termino",textoBuscado);
         if (v == btnDia) {
-            miFragmento = new WebFragmentDia();
+            miFragmento = new WebFragmentTienda1();
         } else if (v == findViewById(R.id.buttonBonarea)) {
-            miFragmento = new WebFragmentBonarea();
+            miFragmento = new WebFragmentTienda2();
 
         } else {
-            miFragmento = new WebFragmentEroski();
+            miFragmento = new WebFragmentTienda3();
 
         }
         miFragmento.setArguments(busqueda);
@@ -67,9 +68,8 @@ public class ResultActivity extends AppCompatActivity {
          //onBackPressed();
         finish();
     }
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        Toast.makeText(this, "cambio", Toast.LENGTH_SHORT).show();
         if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             // Cambiar a la actividad vertical
             Intent intent = new Intent(this, ResultSwipeActivity.class);

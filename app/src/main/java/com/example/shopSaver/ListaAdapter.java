@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,23 +14,20 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 import java.util.List;
 
 // ListaAdapter.java
 public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ItemViewHolder> {
-    private List<ListItem> items = new ArrayList<>();
+    // items es final, la referencia a items no puede ser reasignada después de la inicialización
+    private final List<ListItem> items;
     private final Context context;
 
-    private final String tiendaNombre;
     private OnItemStateChangedListener itemStateChangedListener;
 
 
-    public ListaAdapter(Context context, List<ListItem> items, String tiendaNombre) {
+    public ListaAdapter(Context context, List<ListItem> items) {
         this.context = context;
         this.items = items;
-        this.tiendaNombre = tiendaNombre;
     }
 
     @NonNull
@@ -42,7 +39,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ItemViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
-        final ListItem item = items.get(position);
+        final ListItem item = items.get(position); // item es final, la referencia a item no puede ser reasignada después de la inicialización
         holder.itemName.setText(item.getText());
         // Configurar el estado de tachado del elemento
         if (item.getActivo()) {
@@ -68,14 +65,12 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ItemViewHold
                 }
             }
         });
-        // Configurar OnLongClickListener para cambiar el texto al hacer clic largo
+        // Configurar OnLongClickListener para cambiar el texto al hacer click largo
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 showChangeTextDialog(holder.getAdapterPosition()); // Mostrar el diálogo para cambiar el texto
-                // Llamar al método de la interfaz para notificar el cambio de estado a ListaActivity
-
-                return true; // Indicar que el evento de clic largo ha sido consumido
+                return true;
             }
         });
 
@@ -124,7 +119,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ItemViewHold
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
-        TextView itemName;
+        final TextView itemName;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);

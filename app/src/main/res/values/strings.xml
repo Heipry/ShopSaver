@@ -25,7 +25,10 @@
     <string name="TituloElementoTienda">Lista compra</string>
     <string name="AñadirString">Añadir a esta lista</string>
     <string name="lista_compra_con_nombre_tienda">Lista de Compra %s</string>
-    <string name="stringTotalesParametro">%d elementos totales</string>
+    <plurals name="stringTotalesParametro">
+        <item quantity="one">%d elemento total</item>
+        <item quantity="other">%d elementos totales</item>
+    </plurals>
     <string name="stringValidosParametro">"Quedan %d de "</string>
 
 </resources>

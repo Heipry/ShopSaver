@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,31 +51,32 @@ public class ResultSwipeActivity extends AppCompatActivity {
 
 
     }
-    private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+    private static class ScreenSlidePagerAdapter extends FragmentStateAdapter {
         private final Bundle bundle;
         public ScreenSlidePagerAdapter(FragmentActivity fa, Bundle bundle) {
             super(fa);
             this.bundle = bundle;
         }
 
+        @NonNull
         @Override
         public Fragment createFragment(int position) {
             Fragment fragment;
 
             switch(position) {
-                case 0:
-                    fragment = new WebFragmentDia();
-                    break;
+
                 case 1:
-                    fragment = new WebFragmentBonarea();
+                    fragment = new WebFragmentTienda2();
                     break;
                 case 2:
-                    fragment = new WebFragmentEroski();
+                    fragment = new WebFragmentTienda3();
                     break;
                 default:
-                    fragment = null;
+                    fragment = new WebFragmentTienda1();
             }
+
             fragment.setArguments(bundle);
+
             return fragment;
         }
 
@@ -87,7 +88,7 @@ public class ResultSwipeActivity extends AppCompatActivity {
     public void returnBack(View view) {
         finish();
     }
-    public void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             // Cambiar a la actividad horizontal

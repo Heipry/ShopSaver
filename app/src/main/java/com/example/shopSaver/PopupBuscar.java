@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +13,6 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class PopupBuscar extends AppCompatActivity {
     TextView btn_ir;
@@ -22,8 +21,9 @@ public class PopupBuscar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popup_buscar);
+        WindowManager windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         DisplayMetrics medidaVentana = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(medidaVentana);
+        windowManager.getDefaultDisplay().getMetrics(medidaVentana);
         int ancho = medidaVentana.widthPixels;
         int alto = medidaVentana.heightPixels;
         getWindow().setLayout((int)(ancho*0.85),(int)(alto*0.5));
@@ -75,7 +75,7 @@ public class PopupBuscar extends AppCompatActivity {
             } else {
                  busqueda = new Intent(PopupBuscar.this, ResultSwipeActivity.class);
             }
-            String vBuscado = buscado.getText().toString();
+            String vBuscado = buscado.getText().toString().trim();
             busqueda.putExtra("termino", vBuscado);
             buscado.setText("");
             startActivity(busqueda);

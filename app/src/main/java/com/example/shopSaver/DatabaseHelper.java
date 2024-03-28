@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

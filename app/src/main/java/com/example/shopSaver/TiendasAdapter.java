@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import android.content.Context;
 import android.content.Intent;
@@ -62,8 +62,8 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
     }
 
     public static class TiendaViewHolder extends RecyclerView.ViewHolder {
-        TextView tiendaName;
-        ImageView tiendaImage;
+        final TextView tiendaName;
+        final ImageView tiendaImage;
 
 
         public TiendaViewHolder(@NonNull View itemView) {

@@ -1,4 +1,4 @@
-package com.example.ShopSaver;
+package com.example.shopSaver;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,15 +17,11 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 
-public class WebFragmentBonarea extends Fragment {
+public class WebFragmentTienda2 extends Fragment {
 
-
-
-
-    // TODO: Rename and change types of parameters
     private String busqueda;
 
-    public WebFragmentBonarea() {
+    public WebFragmentTienda2() {
         // Required empty public constructor
     }
 
@@ -35,32 +31,29 @@ public class WebFragmentBonarea extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
-        busqueda = bundle.getString("termino");
+        busqueda = bundle != null ? bundle.getString("termino") : "";
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_web_bonarea, container, false);
+        return inflater.inflate(R.layout.fragment_web_tienda2, container, false);
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         String url = "https://www.bonarea-online.com/es/shop/find?searchWords="+busqueda;
-        WebView web = getView().findViewById(R.id.webViewBonarea);
+        WebView web = view.findViewById(R.id.webViewBonarea);
         if (web != null) {
+            // La web no se visualiza correctamente sin js (no se ven las imágenes)). sin js sería más seguro y saltariamos el aviso de cookeis
             web.getSettings().setJavaScriptEnabled(true);
+            //TODO Utilizar Content Security Policy (CSP):
             web.loadUrl(url);
-        } else {
-            Log.e("WebFragmentBonarea", "El WebView es nulo");
-        }
+
         web.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
 
-
-                int centerX = 100;
-                int centerY = 100;
                 PopupMenu webViewContextMenu = new PopupMenu(getContext(), view);
                 webViewContextMenu.getMenuInflater().inflate(R.menu.add_to_list, webViewContextMenu.getMenu());
 
@@ -68,6 +61,7 @@ public class WebFragmentBonarea extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
+                            //TODO añadir nombre tienda2 en strings
                             Toast.makeText(view.getContext(), busqueda + " añadido a Bonarea", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), ListaActivity.class);
                             // Crear un Bundle para enviar datos
@@ -89,5 +83,8 @@ public class WebFragmentBonarea extends Fragment {
 
             }
         });
+        } else {
+            Log.e("WebFragmentBonarea", "El WebView es nulo");
+        }
     }
 }
