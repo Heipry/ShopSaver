@@ -1,6 +1,5 @@
 package com.example.shopSaver;
 
-import android.os.Build;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -30,9 +29,8 @@ public class WebViewHelperCSP {
         webSettings.setUserAgentString("custom-agent-string"); // Establece una cadena de agente de usuario personalizada
         webSettings.setTextZoom(100); // Establece el zoom de texto al 100%
         webSettings.setStandardFontFamily("sans-serif"); // Establece la familia de fuentes estándar
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            webSettings.setSafeBrowsingEnabled(true); // Habilita la navegación segura en dispositivos con Android 8.0 o superior
-        }
+        webSettings.setSafeBrowsingEnabled(true); // Habilita la navegación segura en dispositivos con Android 8.0 o superior
+
         webSettings.setMinimumFontSize(8); // Establece el tamaño de fuente mínimo
     }
 
