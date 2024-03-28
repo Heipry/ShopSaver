@@ -25,7 +25,7 @@
     <string name="AddString">%s gehitua %s-en</string>
     <string name="TituloResultados">Emaitzak</string>
     <string name="TituloElementoTienda">Erosketa Zerrenda</string>
-    <string name="AñadirString">Zerrenda honetara gehitu</string>
+    <string name="AddToListString">Zerrenda honetara gehitu</string>
     <string name="QuitarString">Zerrendatik kendu</string>
     <string name="ModificarString">Elementua aldatu</string>
     <string name="AceptarString">Onartu</string>

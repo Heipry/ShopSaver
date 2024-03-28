@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:onClick="openList"
         android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toStartOf="@+id/cardBonarea"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit">
@@ -150,7 +151,7 @@
 
     <LinearLayout
         android:id="@+id/cardEroski"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="openList"
         android:orientation="horizontal"

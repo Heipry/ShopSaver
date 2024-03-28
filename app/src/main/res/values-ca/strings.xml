@@ -25,7 +25,7 @@
         <string name="AddString">%s afegit a %s</string>
         <string name="TituloResultados">Resultats</string>
         <string name="TituloElementoTienda">Llista de la compra</string>
-        <string name="AñadirString">Afegir a aquesta llista</string>
+        <string name="AddToListString">Afegir a aquesta llista</string>
         <string name="QuitarString">Treure de la llista</string>
         <string name="ModificarString">Modificar element</string>
         <string name="AceptarString">Acceptar</string>

@@ -52,7 +52,7 @@ public class ResultSwipeActivity extends AppCompatActivity {
                         }
                     }
                 }).attach();
-           viewPager.setOffscreenPageLimit(1);
+           viewPager.setOffscreenPageLimit(2);
 
 
     }
