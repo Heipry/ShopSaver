@@ -48,7 +48,9 @@ public class WebFragmentTienda1 extends Fragment {
         WebView web = view.findViewById(R.id.webViewTienda1);
         if (web != null) {
             // Si la web no se visualizase correctamente sin js habría que activar la siguiente linea. sin js es más seguro
-            // web.getSettings().setJavaScriptEnabled(true);
+            // La web no se visualiza correctamente sin js (no se ven las imágenes)). sin js sería más seguro y quitariamos el aviso de cookies
+            //Vamos a habilitar JS cargando CSP
+            WebViewHelperCSP.configureWebView(web, false);
             web.loadUrl(url);
 
         web.setOnLongClickListener(new View.OnLongClickListener() {
