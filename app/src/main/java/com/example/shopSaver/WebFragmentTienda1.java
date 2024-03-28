@@ -20,11 +20,8 @@ import android.widget.Toast;
 
 public class WebFragmentTienda1 extends Fragment {
 
-
-
-    // TODO: Rename and change types of parameters
-     private String busqueda;
-
+    private String busqueda;
+    private String nombreTienda;
     public WebFragmentTienda1() {
         // Required empty public constructor
     }
@@ -47,6 +44,7 @@ public class WebFragmentTienda1 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         // url cambia según tienda y versión de esta
         String url = "https://www.dia.es/search?q="+busqueda;
+        nombreTienda = getString(R.string.SuperName1);
         WebView web = view.findViewById(R.id.webViewTienda1);
         if (web != null) {
             // Si la web no se visualizase correctamente sin js habría que activar la siguiente linea. sin js es más seguro
@@ -63,13 +61,12 @@ public class WebFragmentTienda1 extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
-                            //TODO añadir nombre tienda1 en strings
-                            Toast.makeText(view.getContext(), busqueda + " añadido a Dia", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(view.getContext(), busqueda + " añadido a "+ nombreTienda, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), ListaActivity.class);
                             // Crear un Bundle para enviar datos
                             Bundle bundle = new Bundle();
                             bundle.putString("nuevoElemento", busqueda);
-                            bundle.putString("tienda", getString(R.string.SuperName1));
+                            bundle.putString("tienda", nombreTienda);
                             // Agregar el Bundle al Intent
                             intent.putExtras(bundle);
                             // Iniciar ListaActivity

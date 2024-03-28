@@ -7,7 +7,7 @@
     tools:context=".WebFragmentTienda2">
 
     <WebView
-        android:id="@+id/webViewBonarea"
+        android:id="@+id/webViewTienda2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>

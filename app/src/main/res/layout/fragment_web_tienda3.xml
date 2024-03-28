@@ -7,7 +7,7 @@
     tools:context=".WebFragmentTienda3">
 
     <WebView
-        android:id="@+id/webViewEroski"
+        android:id="@+id/webViewTienda3"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>

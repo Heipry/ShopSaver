@@ -19,6 +19,8 @@ import android.widget.Toast;
 public class WebFragmentTienda3 extends Fragment {
 
     private String busqueda;
+    private String nombreTienda;
+
     public WebFragmentTienda3() {
         // Required empty public constructor
     }
@@ -39,7 +41,8 @@ public class WebFragmentTienda3 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         String url = "https://supermercado.eroski.es/es/search/results/?q="+busqueda;
-        WebView web = view.findViewById(R.id.webViewEroski);
+        nombreTienda = getString(R.string.SuperName3);
+        WebView web = view.findViewById(R.id.webViewTienda3);
         if (web != null) {
             // Si la web no se visualizase correctamente sin js habría que activar la siguiente linea. sin js es más seguro
             // web.getSettings().setJavaScriptEnabled(true);
@@ -55,13 +58,12 @@ public class WebFragmentTienda3 extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
-                            //TODO añadir nombre tienda3 en strings
-                            Toast.makeText(view.getContext(), busqueda + " añadido a "+getString(R.string.SuperName3), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(view.getContext(), busqueda + " añadido a "+nombreTienda, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), ListaActivity.class);
                             // Crear un Bundle para enviar datos
                             Bundle bundle = new Bundle();
                             bundle.putString("nuevoElemento", busqueda);
-                            bundle.putString("tienda", getString(R.string.SuperName3));
+                            bundle.putString("tienda", nombreTienda);
                             // Agregar el Bundle al Intent
                             intent.putExtras(bundle);
                             // Iniciar ListaActivity
@@ -78,7 +80,7 @@ public class WebFragmentTienda3 extends Fragment {
             }
         });
         } else {
-            Log.e("WebFragmentBonarea", "El WebView es nulo");
+            Log.e("WebFragmentTienda3", "El WebView es nulo");
         }
     }
 }
