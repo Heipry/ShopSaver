@@ -22,9 +22,13 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
           Bundle busqueda = new Bundle();
-          textoInicial = getIntent().getExtras().getString("termino");
+          Bundle extras = getIntent().getExtras();
+          if (extras != null && extras.containsKey("termino")) {
+              textoInicial = extras.getString("termino");
+          }else{
+              textoInicial = "Item";
+          }
           busqueda.putString("termino",textoInicial);
-
           FragmentManager fragmentManager=this.getSupportFragmentManager();
           androidx.fragment.app.FragmentTransaction transaction=fragmentManager.beginTransaction();
           WebFragmentTienda1 fragmentInicial=new WebFragmentTienda1();
@@ -74,8 +78,8 @@ public class ResultActivity extends AppCompatActivity {
             // Cambiar a la actividad vertical
             Intent intent = new Intent(this, ResultSwipeActivity.class);
             intent.putExtra("termino", textoInicial);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(intent);
-            finish(); // Cierra la actividad actual
         }
     }
 }

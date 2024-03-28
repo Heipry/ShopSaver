@@ -25,7 +25,12 @@ public class ResultSwipeActivity extends AppCompatActivity {
         FragmentStateAdapter pagerAdapter;
         viewPager = findViewById(R.id.paginador);
         Bundle bundle = new Bundle();
-        textoInicial = getIntent().getExtras().getString("termino");
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.containsKey("termino")) {
+            textoInicial = extras.getString("termino");
+        }else{
+            textoInicial = "Item";
+        }
         bundle.putString("termino",textoInicial);
         pagerAdapter = new ScreenSlidePagerAdapter(this, bundle);
         viewPager.setAdapter(pagerAdapter);
@@ -94,8 +99,8 @@ public class ResultSwipeActivity extends AppCompatActivity {
             // Cambiar a la actividad horizontal
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("termino", textoInicial);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(intent);
-            finish(); // Cierra la actividad actual
         }
     }
 }

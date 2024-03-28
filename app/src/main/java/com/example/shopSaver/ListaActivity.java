@@ -31,18 +31,26 @@ public class ListaActivity extends AppCompatActivity implements ListaAdapter.OnI
 
         setContentView(R.layout.activity_lista);
         Bundle bundle = getIntent().getExtras();
-        tiendaNombre = bundle.getString("tienda");
+        if (bundle != null && bundle.containsKey("tienda")) {
+            tiendaNombre = bundle.getString("tienda");
+        }else{
+            tiendaNombre = "Tienda";
+        }
         totalItemsTextView = findViewById(R.id.totalItemsTextView);
         activeItemsTextView = findViewById(R.id.activeItemsTextView);
         items.clear();
 
-        if ( savedInstanceState == null && bundle.containsKey("nuevoElemento")) {
+        if ( savedInstanceState == null && bundle!=null && bundle.containsKey("nuevoElemento")) {
             String nuevoElemento = bundle.getString("nuevoElemento");
             items.add(new ListItem(nuevoElemento, true));
         }
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        tiendaNombre = bundle.getString("tienda");
+        if (bundle != null && bundle.containsKey("tienda")) {
+            tiendaNombre = bundle.getString("tienda");
+        }else{
+            tiendaNombre = "Tienda";
+        }
         adapter = new ListaAdapter(this,items);
         recyclerView.setAdapter(adapter);
         TextView listNameTextView = findViewById(R.id.listNameTextView);
