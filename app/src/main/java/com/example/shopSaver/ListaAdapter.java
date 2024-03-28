@@ -80,14 +80,14 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ItemViewHold
 
     private void showChangeTextDialog(int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Modificar elemento");
+        builder.setTitle(this.context.getString(R.string.ModificarString));
         // Crear un EditText dentro del diálogo para que el usuario ingrese el nuevo texto
         final EditText input = new EditText(context);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         input.setText(items.get(position).getText());
         builder.setView(input);
         // Configurar los botones del diálogo
-        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(this.context.getString(R.string.AceptarString), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String newText = input.getText().toString();
@@ -98,7 +98,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ItemViewHold
                 }
             }
         });
-        builder.setNegativeButton("Quitar de la lista", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(this.context.getString(R.string.QuitarString), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 items.remove(position);

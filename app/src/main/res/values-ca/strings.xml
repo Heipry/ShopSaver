@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="app_name">ShopSaver</string>
+        <string name="TituloLista">Llista de la compra</string>
+        <string name="stringValidos" >Queden 0 de </string>
+        <string name="stringTotales">0 elements totals</string>
+        <string name="btnBuscarText">Cercar</string>
+        <string name="btnVaciarText">Buidar Llista</string>
+        <string name="homeDescription">Inici</string>
+        <string name="arrowDescription">Enrere</string>
+        <string name="arrowDrawDescription">Fletxa</string>
+        <string name="btnMasDescription">Afegir</string>
+        <string name="ShopSaver">ShopSaver</string>
+        <string name="ShopSaverSubtitle">Troba, Compara i Desa</string>
+        <string name="hintDescription1">Comença cercant alguna cosa</string>
+        <string name="hintDescription2">Afegeix un producte a la teva compra</string>
+        <string name="stringListas">Llistes</string>
+        <string name="SuperName1">Dia</string>
+        <string name="SuperName2">Bonarea</string>
+        <string name="SuperName3">Eroski</string>
+        <string name="superStrings">Supermercats</string>
+        <string name="buscarTitle">Cercar</string>
+        <string name="BtnIrString">Anar</string>
+        <string name="hintBuscarString">Xocolata</string>
+        <string name="AñadidoString">%s afegit a %s</string>
+        <string name="TituloResultados">Resultats</string>
+        <string name="TituloElementoTienda">Llista de la compra</string>
+        <string name="AñadirString">Afegir a aquesta llista</string>
+        <string name="QuitarString">Treure de la llista</string>
+        <string name="ModificarString">Modificar element</string>
+        <string name="AceptarString">Acceptar</string>
+        <string name="lista_compra_con_nombre_tienda">Llista de la compra %s</string>
+        <plurals name="stringTotalesParametro">
+            <item quantity="one">%d element total</item>
+            <item quantity="other">%d elements totals</item>
+        </plurals>
+        <string name="stringValidosParametro">"Queden %d de "</string>
+</resources>

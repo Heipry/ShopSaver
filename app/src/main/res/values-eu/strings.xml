@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ShopSaver</string>
+    <string name="TituloLista">Erosketa Zerrenda</string>
+    <string name="stringValidos">Geratzen dira 0-tik </string>
+    <string name="stringTotales">0 elementu guztiak</string>
+    <string name="btnBuscarText">Bilatu</string>
+    <string name="btnVaciarText">Hutsik Ezazu Zerrenda</string>
+    <string name="homeDescription">Hasiera</string>
+    <string name="arrowDescription">Atzera</string>
+    <string name="arrowDrawDescription">Gezi</string>
+    <string name="btnMasDescription">Gehitu</string>
+    <string name="ShopSaver">ShopSaver</string>
+    <string name="ShopSaverSubtitle">Bilatu, Konparatu eta Gorde</string>
+    <string name="hintDescription1">Hasieratu zerbait bilatzen</string>
+    <string name="hintDescription2">Gehitu produktu bat erosketara</string>
+    <string name="stringListas">Zerrendak</string>
+    <string name="SuperName1">Dia</string>
+    <string name="SuperName2">Bonarea</string>
+    <string name="SuperName3">Eroski</string>
+    <string name="superStrings">Supermerkatuak</string>
+    <string name="buscarTitle">Bilatu</string>
+    <string name="BtnIrString">Joan</string>
+    <string name="hintBuscarString">Txokolatea</string>
+    <string name="AñadidoString">%s gehitua %s-en</string>
+    <string name="TituloResultados">Emaitzak</string>
+    <string name="TituloElementoTienda">Erosketa Zerrenda</string>
+    <string name="AñadirString">Zerrenda honetara gehitu</string>
+    <string name="QuitarString">Zerrendatik kendu</string>
+    <string name="ModificarString">Elementua aldatu</string>
+    <string name="AceptarString">Onartu</string>
+    <string name="lista_compra_con_nombre_tienda">Erosketa Zerrenda %s</string>
+    <plurals name="stringTotalesParametro">
+        <item quantity="one">%d elementu guztia</item>
+        <item quantity="other">%d elementu guztiak</item>
+    </plurals>
+    <string name="stringValidosParametro">"Geratzen dira %d-tik "</string>
+</resources>
