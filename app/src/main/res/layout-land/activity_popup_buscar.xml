@@ -93,7 +93,6 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txtDia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -141,7 +140,6 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txtBonarea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -164,7 +162,6 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginStart="52dp"
@@ -190,7 +187,6 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txtEroski"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
