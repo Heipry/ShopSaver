@@ -21,7 +21,7 @@
     <string name="buscarTitle">Buscar</string>
     <string name="BtnIrString">Ir</string>
     <string name="hintBuscarString">Chocolate</string>
-    <string name="AñadidoString">%s añadido a %s</string>
+    <string name="AddString">%s añadido a %s</string>
     <string name="TituloResultados">Resultados</string>
     <string name="TituloElementoTienda">Lista compra</string>
     <string name="AñadirString">Añadir a esta lista</string>

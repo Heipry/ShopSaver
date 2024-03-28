@@ -22,7 +22,7 @@
         <string name="buscarTitle">Cercar</string>
         <string name="BtnIrString">Anar</string>
         <string name="hintBuscarString">Xocolata</string>
-        <string name="AñadidoString">%s afegit a %s</string>
+        <string name="AddString">%s afegit a %s</string>
         <string name="TituloResultados">Resultats</string>
         <string name="TituloElementoTienda">Llista de la compra</string>
         <string name="AñadirString">Afegir a aquesta llista</string>
@@ -32,7 +32,7 @@
         <string name="lista_compra_con_nombre_tienda">Llista de la compra %s</string>
         <plurals name="stringTotalesParametro">
             <item quantity="one">%d element total</item>
-            <item quantity="other">%d elements totals</item>
+            <item quantity="many">%d elements totals</item>
         </plurals>
         <string name="stringValidosParametro">"Queden %d de "</string>
 </resources>

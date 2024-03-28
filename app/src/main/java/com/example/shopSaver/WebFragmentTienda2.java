@@ -63,7 +63,7 @@ public class WebFragmentTienda2 extends Fragment {
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         if (menuItem.getItemId() == R.id.add_to_list) {
 
-                            Toast.makeText(view.getContext(), getString(R.string.AñadidoString, busqueda, nombreTienda), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(view.getContext(), getString(R.string.AddString, busqueda, nombreTienda), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), ListaActivity.class);
                             // Crear un Bundle para enviar datos
                             Bundle bundle = new Bundle();

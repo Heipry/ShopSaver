@@ -22,7 +22,7 @@
     <string name="buscarTitle">Bilatu</string>
     <string name="BtnIrString">Joan</string>
     <string name="hintBuscarString">Txokolatea</string>
-    <string name="AñadidoString">%s gehitua %s-en</string>
+    <string name="AddString">%s gehitua %s-en</string>
     <string name="TituloResultados">Emaitzak</string>
     <string name="TituloElementoTienda">Erosketa Zerrenda</string>
     <string name="AñadirString">Zerrenda honetara gehitu</string>
