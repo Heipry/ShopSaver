@@ -25,7 +25,7 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
     private final List<String> tiendas;
     private final Context context;
     private final Map<String, Integer> tiendaImageMap = new HashMap<>();
-    private SQLiteDatabase db;
+
     public TiendasAdapter(List<String> tiendas, Context context) {
         this.tiendas = tiendas;
         this.context = context;
@@ -93,10 +93,9 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
     // Método para obtener el contador total de elementos para una tienda dada
     @SuppressLint("Range")
     private int[] obtenerTotalItems(String tienda) {
-
+        SQLiteDatabase db;
         int[] contadores = new int[2];
-        contadores[0]=0;
-        contadores[1]=0;
+
         try (DatabaseHelper dbHelper = new DatabaseHelper(this.context)) {
             db = dbHelper.getReadableDatabase();
             String tableName = tienda.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
