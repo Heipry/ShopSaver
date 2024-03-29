@@ -1,7 +1,11 @@
 package com.example.shopSaver;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +25,7 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
     private final List<String> tiendas;
     private final Context context;
     private final Map<String, Integer> tiendaImageMap = new HashMap<>();
+    private SQLiteDatabase db;
     public TiendasAdapter(List<String> tiendas, Context context) {
         this.tiendas = tiendas;
         this.context = context;
@@ -44,6 +49,12 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
         int imageResourceId = (imageResourceInteger != null) ? imageResourceInteger : 0;
 
         holder.tiendaImage.setImageResource(imageResourceId);
+        int[] numItems = obtenerTotalItems(tienda);
+
+        holder.numValidos.setText(context.getString(R.string.stringValidosParametro, numItems[1]));
+        holder.numTotales.setText(context.getResources().getQuantityString(R.plurals.stringTotalesParametro, numItems[0], numItems[0]));
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +62,10 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
                 Bundle bundle = new Bundle();
                 bundle.putString("tienda", tienda);
                 intent.putExtras(bundle);
+                //Cerramos activity, asi al volver recargaremos contadores
+                ((Activity) context).finish();
                 context.startActivity(intent);
+
             }
         });
     }
@@ -63,6 +77,8 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
 
     public static class TiendaViewHolder extends RecyclerView.ViewHolder {
         final TextView tiendaName;
+        final TextView numValidos;
+        final TextView numTotales;
         final ImageView tiendaImage;
 
 
@@ -70,6 +86,34 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
             super(itemView);
             tiendaName = itemView.findViewById(R.id.tienda_name);
             tiendaImage = itemView.findViewById(R.id.tienda_image);
+            numValidos = itemView.findViewById(R.id.txt_numValidos);
+            numTotales =itemView.findViewById(R.id.txt_numTotales);
         }
     }
+    // Método para obtener el contador total de elementos para una tienda dada
+    @SuppressLint("Range")
+    private int[] obtenerTotalItems(String tienda) {
+
+        int[] contadores = new int[2];
+        contadores[0]=0;
+        contadores[1]=0;
+        try (DatabaseHelper dbHelper = new DatabaseHelper(this.context)) {
+            db = dbHelper.getReadableDatabase();
+            String tableName = tienda.replaceAll("\\s+", ""); // Eliminar espacios en blanco para el nombre de la tabla
+            Cursor cursor = db.rawQuery("SELECT item, is_activo FROM " + tableName, null);
+            if (cursor != null) {
+                while (cursor.moveToNext()) {
+                    contadores[0]++;
+                    if (cursor.getInt(cursor.getColumnIndex("is_activo")) == 1){
+                        contadores[1]++;
+                    }
+                }
+                cursor.close();
+            }
+        }
+        db.close();
+    return contadores;
+    }
+
+
 }

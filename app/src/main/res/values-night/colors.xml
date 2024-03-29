@@ -8,4 +8,5 @@
     <color name="texto">#FFFFFF</color>
     <color name="textoBoton">#CCCCCC</color>
     <color name="fondoCard">#222222</color>
+    <color name="botonRosa">#6e5c6e</color>
 </resources>

@@ -99,18 +99,16 @@
 
     <Button
         android:id="@+id/btn_listas"
-        style="@style/Widget.Material3.Button.TonalButton.Icon"
+        android:backgroundTint="@color/botonRosa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:drawableStart="@drawable/icon_list"
-
+        android:drawableLeft="@drawable/icon_list"
+        android:drawableTint="@color/texto"
         android:text="@string/stringListas"
         android:textColor="@color/texto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_buscar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
