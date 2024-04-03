@@ -25,21 +25,23 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
-        style="@style/Widget.Material3.Button.TonalButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
-        android:drawableStart="@drawable/icon_list"
+        android:drawableLeft="@drawable/icon_list"
         android:drawablePadding="4dp"
         android:minHeight="6dp"
         android:onClick="returnHome"
         android:padding="4dp"
         android:text="@string/btnBuscarText"
-        android:textColor="@color/material_dynamic_neutral60"
+        android:textColor="@color/texto"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/botonRosa"
+        android:drawableTint="@color/texto"
+        />
 
     <ImageButton
         style="@style/Widget.AppCompat.ImageButton"

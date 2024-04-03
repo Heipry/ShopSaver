@@ -17,6 +17,7 @@ import android.widget.TextView;
 public class PopupBuscar extends AppCompatActivity {
     TextView btn_ir;
     EditText buscado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,19 +27,24 @@ public class PopupBuscar extends AppCompatActivity {
         windowManager.getDefaultDisplay().getMetrics(medidaVentana);
         int ancho = medidaVentana.widthPixels;
         int alto = medidaVentana.heightPixels;
-        getWindow().setLayout((int)(ancho*0.85),(int)(alto*0.5));
+        int altoDP = (int) (alto / getResources().getDisplayMetrics().density);
+        if (altoDP < 800) {
+            getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.85));
+        } else {
+            getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.5));
+        }
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         buscado = findViewById(R.id.edit);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         buscado.requestFocus();
         btn_ir = findViewById(R.id.txt_ir);
-        btn_ir.setOnClickListener(new intentBuscar());
+        btn_ir.setOnClickListener(intentBuscar);
 
         buscado.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEND || (event != null && event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
-                    new intentBuscar().onClick(buscado);
+                if (actionId == EditorInfo.IME_ACTION_DONE || (event != null && event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    intentBuscar.onClick(buscado);
                     return true;
                 }
                 return false;
@@ -54,7 +60,7 @@ public class PopupBuscar extends AppCompatActivity {
 
         } else if (view.getId() == R.id.cardBonarea) {
             bundle.putString("tienda", getString(R.string.SuperName2));
-        }else  {
+        } else {
             bundle.putString("tienda", getString(R.string.SuperName3));
         }
         intent.putExtras(bundle);
@@ -62,25 +68,25 @@ public class PopupBuscar extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    private class intentBuscar implements View.OnClickListener{
-
+    private final View.OnClickListener intentBuscar = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
             int orientation = getResources().getConfiguration().orientation;
             Intent busqueda;
             if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                 busqueda = new Intent(PopupBuscar.this, ResultActivity.class);
+                busqueda = new Intent(PopupBuscar.this, ResultActivity.class);
             } else {
-                 busqueda = new Intent(PopupBuscar.this, ResultSwipeActivity.class);
+                busqueda = new Intent(PopupBuscar.this, ResultSwipeActivity.class);
             }
             String vBuscado = buscado.getText().toString().trim();
             busqueda.putExtra("termino", vBuscado);
-            buscado.setText("");
             startActivity(busqueda);
+            buscado.setText("");
+
         }
-    }
+    };
+
+
 
 
 }
