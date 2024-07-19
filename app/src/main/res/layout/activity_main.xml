@@ -75,13 +75,15 @@
         android:id="@+id/btn_buscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="63dp"
         android:background="@drawable/round_button"
         android:contentDescription="@string/btnMasDescription"
         android:elevation="2dp"
         android:padding="15dp"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="@+id/imagen_flecha"
-        app:layout_constraintTop_toBottomOf="@+id/imagen_flecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/icon_plus" />
 
     <Button

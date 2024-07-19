@@ -18,7 +18,6 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/edit"
         android:hint="@string/hintBuscarString"
-        android:imeOptions="actionSend"
         android:inputType="text"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -73,13 +72,13 @@
             android:layout_marginStart="52dp"
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="250dp">
+            app:cardCornerRadius="20dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                app:cardCornerRadius="250dp">
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -119,13 +118,13 @@
             android:layout_marginStart="52dp"
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="250dp">
+            app:cardCornerRadius="20dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                app:cardCornerRadius="250dp">
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -166,13 +165,13 @@
             android:layout_marginStart="52dp"
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="250dp">
+            app:cardCornerRadius="20dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                app:cardCornerRadius="250dp">
+                app:cardCornerRadius="20dp">
 
                 <ImageView
                     android:layout_width="40dp"
