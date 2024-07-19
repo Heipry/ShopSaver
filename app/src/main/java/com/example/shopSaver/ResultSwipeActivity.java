@@ -34,6 +34,7 @@ public class ResultSwipeActivity extends AppCompatActivity {
         bundle.putString("termino",textoInicial);
         pagerAdapter = new ScreenSlidePagerAdapter(this, bundle);
         viewPager.setAdapter(pagerAdapter);
+        viewPager.setUserInputEnabled(false);
         TabLayout tabLayout = findViewById(R.id.pestanias);
         new TabLayoutMediator(tabLayout, viewPager,
                 new TabLayoutMediator.TabConfigurationStrategy() {
@@ -49,10 +50,13 @@ public class ResultSwipeActivity extends AppCompatActivity {
                             case 2:
                                 tab.setText(getString(R.string.SuperName3));
                                 break;
+                            case 3:
+                                tab.setText(getString(R.string.SuperName4));
+                                break;
                         }
                     }
                 }).attach();
-           viewPager.setOffscreenPageLimit(2);
+           viewPager.setOffscreenPageLimit(3);
 
 
     }
@@ -76,6 +80,9 @@ public class ResultSwipeActivity extends AppCompatActivity {
                 case 2:
                     fragment = new WebFragmentTienda3();
                     break;
+                case 3:
+                    fragment = new WebFragmentTienda4();
+                    break;
                 default:
                     fragment = new WebFragmentTienda1();
             }
@@ -87,7 +94,7 @@ public class ResultSwipeActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 3;
+            return 4;
         }
     }
     public void returnBack(View view) {

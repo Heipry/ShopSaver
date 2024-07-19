@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ShopSaver</string>
     <string name="TituloLista">Lista Compra</string>
-    <string name="stringValidos" >Quedan 0 de </string>
+    <string name="stringValidos">Quedan 0 de </string>
     <string name="stringTotales">0 elementos totales</string>
     <string name="btnBuscarText">Buscar</string>
     <string name="btnVaciarText">Vaciar Lista</string>
@@ -17,6 +17,7 @@
     <string name="SuperName1">Dia</string>
     <string name="SuperName2">Bonarea</string>
     <string name="SuperName3">Eroski</string>
+    <string name="SuperName4">Mercadona</string>
     <string name="superStrings">Supermercados</string>
     <string name="buscarTitle">Buscar</string>
     <string name="BtnIrString">Ir</string>
@@ -34,5 +35,7 @@
         <item quantity="other">%d elementos totales</item>
     </plurals>
     <string name="stringValidosParametro">"Quedan %d de "</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

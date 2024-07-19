@@ -48,7 +48,7 @@ public class WebFragmentTienda2 extends Fragment {
         if (web != null) {
             // La web no se visualiza correctamente sin js (no se ven las imágenes)). sin js sería más seguro y quitariamos el aviso de cookies
             //Vamos a habilitar JS cargando CSP
-            WebViewHelperCSP.configureWebView(web, true);
+            WebViewHelperCSP.configureWebView(web, true, false);
             web.loadUrl(url);
 
         web.setOnLongClickListener(new View.OnLongClickListener() {

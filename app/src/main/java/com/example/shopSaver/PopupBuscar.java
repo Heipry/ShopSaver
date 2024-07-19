@@ -26,7 +26,7 @@ public class PopupBuscar extends AppCompatActivity {
         windowManager.getDefaultDisplay().getMetrics(medidaVentana);
         int ancho = medidaVentana.widthPixels;
         int alto = medidaVentana.heightPixels;
-        getWindow().setLayout((int)(ancho*0.85),(int)(alto*0.5));
+        getWindow().setLayout((int)(ancho*0.85),(int)(alto*0.85));
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         buscado = findViewById(R.id.edit);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
@@ -54,8 +54,10 @@ public class PopupBuscar extends AppCompatActivity {
 
         } else if (view.getId() == R.id.cardBonarea) {
             bundle.putString("tienda", getString(R.string.SuperName2));
-        }else  {
+        }else if (view.getId() == R.id.cardEroski) {
             bundle.putString("tienda", getString(R.string.SuperName3));
+        }else {
+            bundle.putString("tienda", getString(R.string.SuperName4));
         }
         intent.putExtras(bundle);
         finish();

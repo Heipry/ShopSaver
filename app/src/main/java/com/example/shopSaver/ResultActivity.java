@@ -16,7 +16,7 @@ import android.widget.Button;
 
 public class ResultActivity extends AppCompatActivity {
     String textoInicial;
-    Button btnDia, btnBonarea, btnEroski;
+    Button btnDia, btnBonarea, btnEroski, btnMercadona;
       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +45,11 @@ public class ResultActivity extends AppCompatActivity {
         btnDia = findViewById(R.id.buttonDia);
         btnBonarea = findViewById(R.id.buttonBonarea);
         btnEroski = findViewById(R.id.buttonEroski);
+        btnMercadona = findViewById(R.id.buttonMercadona);
         btnBonarea.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
         btnEroski.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
         btnDia.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
+        btnMercadona.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa));
         // Ponemos el clickado con color marcado
         v.setBackgroundColor(ContextCompat.getColor(this, R.color.rosa2));
         busqueda.putString("termino",textoBuscado);
@@ -55,9 +57,10 @@ public class ResultActivity extends AppCompatActivity {
             miFragmento = new WebFragmentTienda1();
         } else if (v == findViewById(R.id.buttonBonarea)) {
             miFragmento = new WebFragmentTienda2();
-
-        } else {
+        } else if (v == findViewById(R.id.buttonEroski)) {
             miFragmento = new WebFragmentTienda3();
+        } else {
+            miFragmento = new WebFragmentTienda4();
 
         }
         miFragmento.setArguments(busqueda);

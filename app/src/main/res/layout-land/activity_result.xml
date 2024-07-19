@@ -80,6 +80,18 @@
             android:backgroundTint="@color/rosa"
             android:textColor="@color/textoBoton"
             app:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/buttonMercadona"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/rosa"
+            android:onClick="seleccionarFragmento"
+            android:text="@string/SuperName4"
+            android:textColor="@color/textoBoton"
+            android:textSize="10sp"
+            app:cornerRadius="8dp" />
     </LinearLayout>
 
     <LinearLayout

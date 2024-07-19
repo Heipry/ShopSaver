@@ -17,7 +17,7 @@ public class ListasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas);
-        List<String> tiendas = Arrays.asList(this.getString(R.string.SuperName1),this.getString(R.string.SuperName2), this.getString(R.string.SuperName3));
+        List<String> tiendas = Arrays.asList(this.getString(R.string.SuperName1),this.getString(R.string.SuperName2), this.getString(R.string.SuperName3), "Mercadona");
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         TiendasAdapter adapter = new TiendasAdapter(tiendas, this);
