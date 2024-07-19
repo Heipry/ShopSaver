@@ -35,7 +35,5 @@
         <item quantity="other">%d elementos totales</item>
     </plurals>
     <string name="stringValidosParametro">"Quedan %d de "</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

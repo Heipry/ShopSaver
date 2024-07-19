@@ -13,10 +13,11 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import java.text.Normalizer;
 public class PopupBuscar extends AppCompatActivity {
     TextView btn_ir;
     EditText buscado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,7 @@ public class PopupBuscar extends AppCompatActivity {
         windowManager.getDefaultDisplay().getMetrics(medidaVentana);
         int ancho = medidaVentana.widthPixels;
         int alto = medidaVentana.heightPixels;
-        getWindow().setLayout((int)(ancho*0.85),(int)(alto*0.85));
+        getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.85));
         int altoDP = (int) (alto / getResources().getDisplayMetrics().density);
         if (altoDP < 800) {
             getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.85));
@@ -60,9 +61,9 @@ public class PopupBuscar extends AppCompatActivity {
 
         } else if (view.getId() == R.id.cardBonarea) {
             bundle.putString("tienda", getString(R.string.SuperName2));
-        }else if (view.getId() == R.id.cardEroski) {
+        } else if (view.getId() == R.id.cardEroski) {
             bundle.putString("tienda", getString(R.string.SuperName3));
-        }else {
+        } else {
             bundle.putString("tienda", getString(R.string.SuperName4));
         }
         intent.putExtras(bundle);
@@ -82,13 +83,12 @@ public class PopupBuscar extends AppCompatActivity {
                 busqueda = new Intent(PopupBuscar.this, ResultSwipeActivity.class);
             }
             String vBuscado = buscado.getText().toString().trim();
+            vBuscado = Normalizer
+                    .normalize(vBuscado, Normalizer.Form.NFD)
+                    .replaceAll("[^\\p{ASCII}]", "");
             busqueda.putExtra("termino", vBuscado);
             buscado.setText("");
             startActivity(busqueda);
         }
     };
-
-
-
-
 }
