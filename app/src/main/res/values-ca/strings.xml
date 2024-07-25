@@ -38,4 +38,5 @@
             <item quantity="many">%d elements totals</item>
         </plurals>
         <string name="stringValidosParametro">"Queden %d de "</string>
+        <string name="settings_hint">Introdueix dades per a login:</string>
 </resources>

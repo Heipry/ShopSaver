@@ -39,5 +39,8 @@
         <item quantity="other">%d elementos totales</item>
     </plurals>
     <string name="stringValidosParametro">"Quedan %d de "</string>
+    <string name="settings_hint">Introduce datos para login:</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
 
 </resources>

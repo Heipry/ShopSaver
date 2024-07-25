@@ -38,4 +38,5 @@
         <item quantity="other">%d elementu guztiak</item>
     </plurals>
     <string name="stringValidosParametro">"Geratzen dira %d-tik "</string>
+    <string name="settings_hint">Sartu saioa hasteko informazioa:</string>
 </resources>
