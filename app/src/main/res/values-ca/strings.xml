@@ -19,6 +19,7 @@
         <string name="SuperName2">Bonarea</string>
         <string name="SuperName3">Eroski</string>
         <string name="SuperName4">Mercadona</string>
+        <string name="SuperName5">Lupa</string>
         <string name="superStrings">Supermercats</string>
         <string name="buscarTitle">Cercar</string>
         <string name="BtnIrString">Anar</string>
@@ -30,6 +31,7 @@
         <string name="QuitarString">Treure de la llista</string>
         <string name="ModificarString">Modificar element</string>
         <string name="AceptarString">Acceptar</string>
+        <string name="GuardarString">Guardar</string>
         <string name="lista_compra_con_nombre_tienda">Llista de la compra %s</string>
         <plurals name="stringTotalesParametro">
             <item quantity="one">%d element total</item>

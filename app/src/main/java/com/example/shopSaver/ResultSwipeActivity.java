@@ -53,10 +53,13 @@ public class ResultSwipeActivity extends AppCompatActivity {
                             case 3:
                                 tab.setText(getString(R.string.SuperName4));
                                 break;
+                            case 4:
+                                tab.setText(getString(R.string.SuperName5));
+                                break;
                         }
                     }
                 }).attach();
-           viewPager.setOffscreenPageLimit(3);
+           viewPager.setOffscreenPageLimit(4);
 
 
     }
@@ -83,6 +86,9 @@ public class ResultSwipeActivity extends AppCompatActivity {
                 case 3:
                     fragment = new WebFragmentTienda4();
                     break;
+                case 4:
+                    fragment = new WebFragmentTienda5();
+                    break;
                 default:
                     fragment = new WebFragmentTienda1();
             }
@@ -94,7 +100,7 @@ public class ResultSwipeActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 4;
+            return 5;
         }
     }
     public void returnBack(View view) {

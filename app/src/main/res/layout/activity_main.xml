@@ -28,6 +28,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Titulo" />
 
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_button"
+        android:contentDescription="@string/btnConfDescription"
+        android:elevation="2dp"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
+        android:tint="@color/rosa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cog" />
+
     <ImageView
         android:id="@+id/imagen"
         android:layout_width="302dp"
@@ -55,7 +71,6 @@
         android:id="@+id/texto2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="@string/hintDescription2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,39 +80,63 @@
         android:id="@+id/imagen_flecha"
         android:layout_width="250dp"
         android:layout_height="182dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/arrowDrawDescription"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/texto2"
         app:layout_constraintTop_toBottomOf="@+id/texto2"
         app:srcCompat="@drawable/hand_drawn_arrow" />
 
-    <ImageButton
-        android:id="@+id/btn_buscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="63dp"
-        android:background="@drawable/round_button"
-        android:contentDescription="@string/btnMasDescription"
-        android:elevation="2dp"
-        android:padding="15dp"
-        android:scaleType="fitCenter"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:backgroundTintMode="screen"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/icon_plus" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/btn_listas"
-        android:backgroundTint="@color/botonRosa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:drawableLeft="@drawable/icon_list"
-        android:drawableTint="@color/texto"
-        android:text="@string/stringListas"
-        android:textColor="@color/texto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/left_button"
+            android:drawableLeft="@drawable/icon_login"
+            android:drawableTint="@color/textoBoton"
+            android:text="@string/btnLoginDescription"
+            android:textColor="@color/textoBoton"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/btn_listas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/center_button"
+            android:drawableLeft="@drawable/icon_list"
+            android:drawableTint="@color/textoBoton"
+            android:text="@string/stringListas"
+            android:textColor="@color/textoBoton"
+            app:cornerRadius="0dp"
+            app:backgroundTint="@null"/>
+
+        <Button
+            android:id="@+id/btn_buscar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/right_button"
+            android:drawableLeft="@drawable/icon_plus"
+            android:drawableTint="@color/textoBoton"
+            android:text="@string/btnBuscarText"
+            android:textColor="@color/textoBoton"
+            app:backgroundTint="@null"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

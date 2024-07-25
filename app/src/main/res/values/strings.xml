@@ -9,15 +9,18 @@
     <string name="arrowDescription">Atrás</string>
     <string name="arrowDrawDescription">Flecha</string>
     <string name="btnMasDescription">Añadir</string>
+    <string name="btnLoginDescription" translatable="false">Login</string>
+    <string name="btnConfDescription" translatable="false">Conf</string>
     <string name="ShopSaver">ShopShaver</string>
     <string name="ShopSaverSubtitle">Encuentra, Compara y Guarda</string>
-    <string name="hintDescription1">Empieza buscando algo</string>
-    <string name="hintDescription2">Añade un producto a tu compra</string>
+    <string name="hintDescription1">Empieza logueandote</string>
+    <string name="hintDescription2">Después añade un producto a tu compra</string>
     <string name="stringListas">Listas</string>
     <string name="SuperName1">Dia</string>
     <string name="SuperName2">Bonarea</string>
     <string name="SuperName3">Eroski</string>
     <string name="SuperName4">Mercadona</string>
+    <string name="SuperName5">Lupa</string>
     <string name="superStrings">Supermercados</string>
     <string name="buscarTitle">Buscar</string>
     <string name="BtnIrString">Ir</string>
@@ -29,6 +32,7 @@
     <string name="QuitarString">Quitar de la lista</string>
     <string name="ModificarString">Modificar elemento</string>
     <string name="AceptarString">Aceptar</string>
+    <string name="GuardarString">Guardar</string>
     <string name="lista_compra_con_nombre_tienda">Lista de Compra %s</string>
     <plurals name="stringTotalesParametro">
         <item quantity="one">%d elemento total</item>

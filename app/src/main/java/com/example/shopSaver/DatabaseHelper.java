@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "listas.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 5;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -19,6 +19,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS Bonarea (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, is_activo INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Eroski (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, is_activo INTEGER)");
         db.execSQL("CREATE TABLE IF NOT EXISTS Mercadona (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, is_activo INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Lupa (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, is_activo INTEGER)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS Settings (_id INTEGER PRIMARY KEY AUTOINCREMENT, super TEXT, user TEXT, password TEXT, is_activo INTEGER)");
 
     }
 
@@ -28,7 +30,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (oldVersion < 3) {
             db.execSQL("CREATE TABLE IF NOT EXISTS Mercadona (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, is_activo INTEGER)");
         }
-        // Agregar más condiciones para manejar versiones posteriores aquí si es necesario
+
+        if (oldVersion < 4) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS Settings (_id INTEGER PRIMARY KEY AUTOINCREMENT, super TEXT, user TEXT, password TEXT, is_activo INTEGER)");
+        }
+
+        if (oldVersion < 5) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS Lupa (_id INTEGER PRIMARY KEY AUTOINCREMENT, item TEXT, is_activo INTEGER)");
+        }
     }
 
 }

@@ -58,13 +58,14 @@ public class PopupBuscar extends AppCompatActivity {
         Bundle bundle = new Bundle();
         if (view.getId() == R.id.cardDia) {
             bundle.putString("tienda", getString(R.string.SuperName1));
-
         } else if (view.getId() == R.id.cardBonarea) {
             bundle.putString("tienda", getString(R.string.SuperName2));
         } else if (view.getId() == R.id.cardEroski) {
             bundle.putString("tienda", getString(R.string.SuperName3));
-        } else {
+        } else if (view.getId() == R.id.cardMercadona) {
             bundle.putString("tienda", getString(R.string.SuperName4));
+        }else{
+            bundle.putString("tienda", getString(R.string.SuperName5));
         }
         intent.putExtras(bundle);
         finish();

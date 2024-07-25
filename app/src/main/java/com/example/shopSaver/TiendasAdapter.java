@@ -33,6 +33,7 @@ public class TiendasAdapter extends RecyclerView.Adapter<TiendasAdapter.TiendaVi
         tiendaImageMap.put(this.context.getString(R.string.SuperName2), R.drawable.bonarea);
         tiendaImageMap.put(this.context.getString(R.string.SuperName3), R.drawable.eroski);
         tiendaImageMap.put(this.context.getString(R.string.SuperName4), R.drawable.mercadona);
+        tiendaImageMap.put(this.context.getString(R.string.SuperName5), R.drawable.lupa);
     }
 
     @NonNull
