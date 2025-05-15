@@ -42,7 +42,7 @@ public class WebFragmentTienda5 extends Fragment {
     }
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String url = "https://www.lupaonline.com/logrono/catalogsearch/result/?q="+busqueda;
+        String url = "https://v2.lupaonline.com/logrono/catalogsearch/result/?q="+busqueda;
         nombreTienda = getString(R.string.SuperName5);
         WebView web = view.findViewById(R.id.webViewTienda5);
         if (web != null) {

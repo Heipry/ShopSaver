@@ -45,7 +45,7 @@ public class ResultSwipeActivity extends AppCompatActivity {
                                 tab.setText(getString(R.string.SuperName1));
                                 break;
                             case 1:
-                                tab.setText(getString(R.string.SuperName2));
+                                tab.setText(getString(R.string.SuperName2)); 
                                 break;
                             case 2:
                                 tab.setText(getString(R.string.SuperName3));
