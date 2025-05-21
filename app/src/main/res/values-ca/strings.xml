@@ -39,4 +39,5 @@
         </plurals>
         <string name="stringValidosParametro">"Queden %d de "</string>
         <string name="settings_hint">Introdueix dades per a login:</string>
+        <string name="savLogin" translatable="false">Guardar login</string>
 </resources>

@@ -39,4 +39,6 @@
     </plurals>
     <string name="stringValidosParametro">"Geratzen dira %d-tik "</string>
     <string name="settings_hint">Sartu saioa hasteko informazioa:</string>
+    <string name="savLogin" translatable="false">Guardar login</string>
+
 </resources>

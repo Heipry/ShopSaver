@@ -43,5 +43,6 @@
     <string name="settings_hint">Introduce datos para login:</string>
     <string name="username" translatable="false">Username</string>
     <string name="password" translatable="false">Password</string>
+    <string name="savLogin" translatable="false">Guardar login</string>
 
 </resources>
