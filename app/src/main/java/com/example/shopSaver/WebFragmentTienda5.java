@@ -12,11 +12,15 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.CookieManager;
+import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.PopupMenu;
 import android.widget.Toast;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 
 public class WebFragmentTienda5 extends Fragment {
 
@@ -45,23 +49,27 @@ public class WebFragmentTienda5 extends Fragment {
         String url = "https://v2.lupaonline.com/logrono/catalogsearch/result/?q="+busqueda;
         nombreTienda = getString(R.string.SuperName5);
         WebView web = view.findViewById(R.id.webViewTienda5);
-        if (web != null) {
-            // Si la web no se visualizase correctamente sin js habría que activar la siguiente linea. sin js es más seguro
-            // La web no se visualiza correctamente sin js (no se ven las imágenes)). sin js sería más seguro y quitariamos el aviso de cookies
-            //Vamos a habilitar JS cargando CSP
+        SwipeRefreshLayout swipeRefresh = view.findViewById(R.id.swipeRefreshTienda5);
+        if (web != null && swipeRefresh != null) {
             WebViewHelperCSP.configureWebView(web, true, true);
             // Evitar abrir browser al usar buscador
             web.setWebViewClient(new WebViewClient() {
-                @Override
-                    public boolean shouldOverrideUrlLoading(WebView view, String url){
-                        web.loadUrl(url);
-                        return true;
-                    }
+
                 @Override
                     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request){
                     web.loadUrl(url);
                     return true;
                 }
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    swipeRefresh.setRefreshing(false); // Oculta el indicador de refresh
+                }
+            });
+            swipeRefresh.setOnRefreshListener(() -> {
+                CookieManager.getInstance().removeAllCookies(null);
+                CookieManager.getInstance().flush();
+                Toast.makeText(requireContext(), "Limpiando cookies y recargando...", Toast.LENGTH_SHORT).show();
+                web.reload();
             });
             web.loadUrl(url);
 
